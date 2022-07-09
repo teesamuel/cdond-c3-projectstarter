@@ -90,11 +90,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Test Back-end
-        command:
-          cd frontend
-          npm install
-          npm run test 
+          name: Test Back-end
+          command:
+            cd frontend
+            npm install
+            npm run test 
             
   scan-frontend:
     docker:
