@@ -102,11 +102,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Scan front-end
-        command: |
-          cd frontend
-          npm install
-          npm audit fix --audit level=critical
+          name: Scan front-end
+          command: |
+            cd frontend
+            npm install
+            npm audit fix --audit level=critical
       # Checkout code from git
       # Restore from cache
       # Your job code here
@@ -117,11 +117,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Scan Back-End
-        command: |
-          cd backend
-          npm install
-          npm audit fix --audit level=critical
+          name: Scan Back-End
+          command: |
+            cd backend
+            npm install
+            npm audit fix --audit level=critical
 
       # Checkout code from git
       # Restore from cache
