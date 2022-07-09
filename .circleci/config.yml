@@ -91,8 +91,8 @@ jobs:
       - checkout
       - run:
           name: Test Back-end
-          command:
-            cd frontend
+          command: |
+            cd backend
             npm install
             npm run test 
             
