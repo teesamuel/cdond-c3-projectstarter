@@ -79,7 +79,7 @@ jobs:
       - checkout
       - run:
           name: Test Front-end
-          command:
+          command: |
             cd frontend
             npm install
             npm run test 
