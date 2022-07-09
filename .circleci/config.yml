@@ -182,7 +182,7 @@ jobs:
       # Here's where you will add some code to rollback on failure      
 
   run-migrations:
-    docker:
+    # docker:
       # Docker image here that supports NodeJS
     steps:
       # Checkout code from git
@@ -199,7 +199,7 @@ jobs:
      # Here's where you will add some code to rollback on failure      
 
   deploy-frontend:
-    docker:
+    # docker:
       # Docker image here that supports AWS CLI
     steps:
       # Checkout code from git
@@ -220,7 +220,7 @@ jobs:
       # Here's where you will add some code to rollback on failure      
                     
   deploy-backend:
-    docker:
+    # docker:
       # Docker image here that supports Ansible
     steps:
       # Checkout code from git
@@ -237,7 +237,7 @@ jobs:
       # Here's where you will add some code to rollback on failure  
 
   smoke-test:
-    docker:
+    # docker:
       # Lightweight Docker image 
     steps:
       # Checkout code from git
@@ -260,7 +260,7 @@ jobs:
       # Here's where you will add some code to rollback on failure  
 
   cloudfront-update:
-    docker:
+    # docker:
       # Docker image here that supports AWS CLI
     steps:
       # Checkout code from git
@@ -275,7 +275,7 @@ jobs:
       # Here's where you will add some code to rollback on failure  
 
 cleanup:
-    docker:
+    # docker:
       # Docker image here
     steps:
       # Checkout code from git
