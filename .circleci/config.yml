@@ -13,8 +13,8 @@ commands:
           command: |
             echo "Destroying environment << parameters.workflow_id >>"
             # aws s3 rm "s3://udapeoplefrontend<< parameters.workflow_id >> " --recursive
-            aws cloudformation delete-stack --stack-name udapeople-backend.<< parameters.workflow_id  >>
-            aws cloudformation delete-stack --stack-name udapeople-frontend.<< parameters.workflow_id  >>
+            aws cloudformation delete-stack --stack-name udapeople-backend-<< parameters.workflow_id  >>
+            aws cloudformation delete-stack --stack-name udapeople-frontend-<< parameters.workflow_id  >>
  
 
   revert-migrations:
@@ -136,17 +136,17 @@ jobs:
           name: Ensure back-end infrastructure exists
           command: |
             aws cloudformation deploy \
-              --template-file .circleci/files/backend.yml \
-              --stack-name udacity-backend-bucket-${CIRCLE_WORKFLOW_ID:0:7} \
+              --template-file circleci/files/backend.yml \
+              --stack-name udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7} \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}" 
               --tags project=udapeople 
       - run:
           name: Ensure front-end infrastructure exist
           command: |
             aws cloudformation deploy \
-              --template-file .circleci/files/frontend.yml \
+              --template-file circleci/files/frontend.yml \
               --tags project=udapeople
-              --stack-name udacity-frontend-bucket-${CIRCLE_WORKFLOW_ID:0:7} \
+              --stack-name udapeople-frontend-${CIRCLE_WORKFLOW_ID:0:7} \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}" 
 
       - run:
