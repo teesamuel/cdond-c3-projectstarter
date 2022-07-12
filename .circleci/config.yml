@@ -219,7 +219,6 @@ jobs:
                 # If you are using kvdb.io, generate the bucket ID "MYFraaU6BVZSEVAq6i97f4" in your local terminal first
                 curl https://kvdb.io/MYFraaU6BVZSEVAq6i97f4/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             fi
-
       - destroy-environment:
           workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}  
 
