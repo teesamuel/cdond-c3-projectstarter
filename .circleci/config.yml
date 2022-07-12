@@ -180,7 +180,7 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file .circleci/files/frontend.yml \
-              --tags project=udapeople
+              --tags project=udapeople \
               --stack-name "udapeople-frontend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}" 
 
@@ -195,8 +195,8 @@ jobs:
           root: ~/
           paths:
             - prooject/.circleci/ansible/inventory.txt
-      # - destroy-environment:
-      #     workflow_id: "${CIRCLE_WORKFLOW_ID:0:7}" 
+      - destroy-environment:
+          workflow_id: "${CIRCLE_WORKFLOW_ID:0:7}" 
       # Here's where you will add some code to rollback on failure      
 
   # configure-infrastructure:
