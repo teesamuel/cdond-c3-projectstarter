@@ -396,7 +396,7 @@ jobs:
           workflow_id : ${CIRCLE_WORKFLOW_ID:0:7}
       - revert-migrations:
           workflow_id : ${CIRCLE_WORKFLOW_ID:0:7}
-cleanup:
+  cleanup:
     docker:
       # Docker image here
       - image: amazon/aws-cli
@@ -434,7 +434,7 @@ cleanup:
             else 
                 echo "------------------------Cannot Cleanup----------------------------"
             fi
-            
+              
 
 workflows:
   default:
