@@ -462,6 +462,8 @@ jobs:
             apk add --update ansible tar gzip curl nodejs npm openssh-client git
             pip install awscli
             aws --version
+      - restore_cache:
+          keys: [backend-build]
       - run:
           name: Configure server
           command: |
