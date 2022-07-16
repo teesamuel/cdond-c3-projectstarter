@@ -459,7 +459,6 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            # Your code here
             apk add --update ansible tar gzip curl nodejs npm openssh-client git
             pip install awscli
             aws --version
